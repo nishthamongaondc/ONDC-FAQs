@@ -10,6 +10,7 @@
     - fis_domain
     - technical_documentation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Where can I find resources like test scenarios, log validation utilities, sandbox environments, and mock servers for ONDC integration?
   answer: |-
     ONDC provides a variety of resources to help participants streamline their integration and testing processes. These include:
@@ -36,6 +37,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How is payment handled in FIS?
   answer: The FIS protocol supports automated payment mechanisms such as e-mandates, UPI Autopay, and stored payment instructions. While these methods are enabled at the protocol level, the actual implementation may vary across use cases depending on ecosystem maturity and participant capabilities.
   categories:
@@ -46,6 +48,7 @@
     - fis_domain
     - payment_processing
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Where can I find a flow UI for a particular FIS domain?
   answer: A flow UI is available per domain, such as Personal Loan, Mutual Funds, etc. Choose the appropriate one based on your implementation.
   categories:
@@ -58,6 +61,7 @@
     - fis_domain
     - technical_documentation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Is a list of questions asked in various forms available?
   answer: The Swagger collection provides the JSON schema which includes all questions required for each form.
   categories:
@@ -68,6 +72,7 @@
     - forms
     - technical_documentation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Is there a diagram to help understand the Loan flow?
   answer: Yes. Refer to the flow diagrams in the FIS documentation for a visual representation of each flow.
   categories:
@@ -83,6 +88,7 @@
     - personal_loans
     - technical_documentation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: At which point are KYC, bank detail, and e-mandate forms triggered?
   answer: These forms are typically activated by the lender in the /on_select call, prompting the borrower to proceed with relevant information entry.
   categories:
@@ -94,6 +100,7 @@
     - kyc
     - kyc_verification
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are invoice loans?
   answer: Invoice Loans are unsecured credit products where sellers raise working capital using unpaid invoices. The buyer and seller should have access to GST APIs.
   categories:
@@ -106,6 +113,7 @@
     - loans
     - personal_loans
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are SETTLEMENT_TERMS, and are they mandatory?
   answer: Yes, they are mandatory. These define the terms between buyer and seller apps including delay_interest, etc.
   categories:
@@ -118,6 +126,7 @@
     - settlement
     - settlement_framework
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is delay_interest?
   answer: It is the interest amount (annualized) the Payment Collector charges for delayed payments.
   categories:
@@ -128,6 +137,7 @@
     - settlement
     - settlement_framework
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are static terms in FIS?
   answer: Static terms refer to a URL hosting general terms and conditions not included in the API specifications.
   categories:
@@ -140,6 +150,7 @@
     - fis_domain
     - np_compliance
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Are SETTLEMENT_TERMS needed when offline_contract is true?
   answer: Yes, SETTLEMENT_TERMS are still required and reflect the terms of the offline contract to the terms from the offline contract.
   categories:
@@ -152,6 +163,7 @@
     - settlement
     - settlement_framework
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: archived
 - question: What are the possible fee types for BuyerApp fees?
   answer: |-
     Supported types are:
@@ -167,6 +179,7 @@
     - fis_domain
     - payment_processing
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How are fees calculated?
   answer: 'Use BuyerAppFeeAmount and BuyerAppFeePercentage depending on type. Example: percent-annualized means the fee is based on a 12-month loan.'
   categories:
@@ -177,6 +190,7 @@
     - fis_domain
     - payment_processing
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is xinput in FIS?
   answer: Xinput is a structured schema used to exchange form data between buyers and sellers.
   categories:
@@ -188,6 +202,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What information is included in the head section of xinput?
   answer: The head section contains metadata, such as the form name, index, and headings.
   categories:
@@ -196,6 +211,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What mime_type values are supported in xinput?
   answer: Supported mime_types are text/html, application/html, and text/html-multi.
   categories:
@@ -204,6 +220,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How are multiple data entries handled in xinput, such as for a family floater health plan?
   answer: 'Use the text/html-multi type in xinput, allowing multiple entries, e.g., {"dob": ["17/11/2021", "19/12/2003"], "panValue": ["RKPUS3413T", "SKPUS3413L"]}.'
   categories:
@@ -212,6 +229,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How can forms be skipped in xinput for versions v2.0.0 and v2.3.0?
   answer: In v2.0.0, use a dummy redirecting page. In v2.3.0, dynamic conditional skipping is supported.
   categories:
@@ -220,6 +238,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How are xinput form submissions tracked?
   answer: Submissions are tracked using a submission_id and status, such as SUCCESS, APPROVED, REJECTED, or PENDING.
   categories:
@@ -228,6 +247,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Is an acknowledgement provided upon form submission?
   answer: Yes, an on_status API call returns a form_response with a submission ID.
   categories:
@@ -237,6 +257,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are the possible statuses for form submissions?
   answer: Possible statuses include SUCCESS, PENDING, APPROVED, and REJECTED.
   categories:
@@ -245,6 +266,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What does a form submission error response look like?
   answer: 'An example error response is: {"message": {"ack": {"status": "NACK"}}, "error": {"code": "07", "message": "Data sent in the request is not correct"}}.'
   categories:
@@ -253,6 +275,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How can I confirm all forms have been submitted?
   answer: Compare index.cur with index.max in xinput. If they are equal, all forms are submitted.
   categories:
@@ -261,6 +284,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is TLC in FIS?
   answer: TLC (Transaction-Level Contract) defines the terms specific to a transaction.
   categories:
@@ -273,6 +297,7 @@
     - fis_domain
     - np_compliance
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is an e-mandate form in FIS?
   answer: An e-mandate form authorizes automatic recurring payments from a borrower's bank account.
   categories:
@@ -281,6 +306,7 @@
     - forms
     - payment_processing
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Who is responsible for collecting payments in FIS (payment.collected_by)?
   answer: Either the BuyerApp (BAP) or SellerApp (BPP) can collect payments, as specified.
   categories:
@@ -289,6 +315,7 @@
     - api_flows
     - payment_processing
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Whose bank account is included in the FIS payload?
   answer: The payload includes the BuyerApp's bank account details.
   categories:
@@ -297,6 +324,7 @@
     - api_flows
     - payment_processing
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is gro_name in catalog/providers/tags?
   answer: Gro_name refers to the name of the Grievance Redressal Officer.
   categories:
@@ -307,6 +335,7 @@
     - compliance_checklist
     - np_compliance
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is the purpose of AccountAggregatorID in customer information?
   answer: AccountAggregatorID facilitates integration with an Account Aggregator when the customer lacks an AAID.
   categories:
@@ -317,6 +346,7 @@
     - fis
     - fis_domain
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is XInput and its purpose?
   answer: XInput is a schema designed to streamline communication between buyers and sellers by facilitating the exchange of additional information via forms. Sellers request details through custom forms, and buyers respond with the required data, ensuring smooth transaction processing.
   categories:
@@ -325,6 +355,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What does a typical XInput structure look like on the seller side?
   answer: |-
     A seller-side XInput structure includes:
@@ -338,6 +369,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are the key fields in the head section of XInput?
   answer: |-
     **name**: Descriptive name of the form.
@@ -349,6 +381,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What fields are present in the form section of XInput?
   answer: |-
     **id**: Unique identifier of the form.
@@ -361,6 +394,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How does the navigation flow work in XInput?
   answer: |-
     **Old Construct**: If cur < max, the buyer repeats the same API call. When cur = max, the buyer proceeds to the next API call.
@@ -373,6 +407,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What is form_response in XInput and when is it used?
   answer: |-
     Form_response captures the outcome of a form submission:
@@ -394,6 +429,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are the supported mime_type values in XInput?
   answer: |-
     **text/html**: The buyer renders a form in HTML structure. The form includes fields with name attributes, which become the keys in the submission payload. Read-only fields must be shown as non-editable.
@@ -405,6 +441,7 @@
     - forms
     - xinput
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What does message.intent.category.descriptor.code indicate?
   answer: It categorizes the product or service being requested, such as PERSONAL_LOAN. It helps in routing the request to appropriate providers who handle specific loan types or financial services.
   categories:
@@ -415,6 +452,7 @@
     - loans
     - personal_loans
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What does message.intent.payment.collected_by mean?
   answer: |-
     It defines who collects the payment.
@@ -429,6 +467,7 @@
     - api_flows
     - payment_processing
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What does message.catalog.descriptor.name represent?
   answer: This field specifies the **name of the financial institution** presenting the catalog. For example, ICICI Bank. It provides users with a recognizable label for the source of financial offerings.
   categories:
@@ -436,6 +475,7 @@
   tags:
     - api_flows
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are the credit loans present in ONDC?
   answer: |-
     **Types of Credit Loans Available in ONDC**
@@ -457,6 +497,7 @@
     - loans
     - personal_loans
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Which testing tools are used for FIS flow testing?
   answer: You can utilize Pramaan, an automation tool designed for testing and validating the FIS flow within the ONDC ecosystem also there are reference apps available.
   categories:
@@ -469,6 +510,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Is RSF mandatory for submission of the FIS flow?
   answer: No, it is not required.
   categories:
@@ -484,6 +526,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How should I begin the log submission process?
   answer: Start by creating a **fork** of the verification-logs repository in your GitHub account. Then, prepare your logs and structure them according to the provided guidelines before raising a pull request (PR).
   categories:
@@ -496,6 +539,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Where should I place my log files?
   answer: |-
     Place them in a folder named after your entity, under the domain folder for credit:
@@ -518,6 +562,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What types of logs are required?
   answer: Submit **request and response payloads** for **all enabled APIs**, as per the use-case flows (like /search, /select, /init, etc.). These logs should represent real API interactions.
   categories:
@@ -530,6 +575,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How do I submit the logs for review?
   answer: After committing the logs to your fork, **create a Pull Request (PR)** to the original repository. **Label the PR with your domain name**, e.g., "FIS12".
   categories:
@@ -542,6 +588,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What naming convention should I follow for API logs?
   answer: |-
     For **single calls**, use:
@@ -559,6 +606,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How should I name files if there are multiple API calls for the same endpoint?
   answer: |-
     Use numeric suffixes to differentiate sequential calls. Examples:
@@ -579,6 +627,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Is there any automation tool I can use to test out my seller or buyer app?
   answer: |-
     Pramaan is your complete toolkit that validates your applications through automated checks and simulated scenarios. Pramaan makes testing seamless and hassle-free. Follow these simple steps to get started:
@@ -598,6 +647,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What are the ONDC Reference Applications?
   answer: ONDC Reference Applications in staging and pre-production environments allow Buyer Apps (BAPs) and Seller Apps (BPPs) to **test and validate their APIs, flows, and compliance** with the ONDC protocol. These are maintained by ONDC partners like Cliniq360, Cornex, and SequelString.
   categories:
@@ -610,6 +660,7 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: How can I access the Buyer App for Personal Loan testing?
   answer: |-
     Use this URL: [https://credit.staging.cliniq360.com/](https://credit.staging.cliniq360.com/)
@@ -628,3 +679,4 @@
     - testing
     - validation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active

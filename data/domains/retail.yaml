@@ -59,6 +59,7 @@
     - signature_verification
     - verification
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What are action and on_action calls?
   answer: action calls are made by Buyer apps to seller apps. on_action calls are made by Seller app to buyer apps for action calls they received. There are few unsolicited on_action calls made by Seller app when there is change in order status like on_status,on_update. Search,select,init are few action calls. On_search,on_select,on_init are few on_action calls.
   categories:
@@ -79,6 +80,7 @@
     - seller_np
     - status
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What does “search by item” mean?
   answer: It means sending a search request to find catalogs from sellers that offer the specific item and can fulfill the order at the given drop location — based on GPS coordinates or area code.
   categories:
@@ -91,6 +93,7 @@
     - retail_order
     - search
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is an incremental catalog refresh?
   answer: An incremental catalog refresh is a lightweight update mechanism that allows buyer Network Participants (NPs) to refresh their cached catalogs by receiving only the changes since the last full catalog update. This includes modifications such as item updates, store closures, or store deactivations, making the process more efficient than sending the entire catalog each time.
   categories:
@@ -109,6 +112,7 @@
     - status_update
     - update
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What does ‘TTL’ mean in ONDC?
   answer: TTL (Time To Live) defines how long a message remains valid within the network. It ensures that requests are timely and relevant by setting an expiration duration. TTL is typically expressed in ISO8601 duration format — for example, PT30S represents 30 seconds.
   categories:
@@ -120,6 +124,7 @@
     - open_commerce_network
     - open_network
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: How to book a demo in the staging environment?
   answer: One can book a demo through the NP Portal homepage (portal.ondc.org). Homepage>> Requests related to integration journey>>Book Demo slot Following document contains the guidelines for the demo -
   categories:
@@ -132,6 +137,7 @@
     - open_network
     - technical_integration
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: The quantity,price or count should be numeric or string?
   answer: 'Make sure that not all amounts are in string. There are two major places the amount is in numeric (with strictly 2 decimal places only) especially in on_action calls: Breakup array @ondc/org/item_quantity object has a count key which should be numeric in all on_action calls Items array has quantity object which has count key which should also be numeric in on_action calls after /init calls'
   categories:
@@ -144,6 +150,7 @@
     - retail_b2c
     - retail_domain
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is the transaction trail of ONDC API calls?
   answer: Request is sent from sender to recipient; Recipient acknowledges the request by sending an "ACK" (or "NACK" if they cannot validate the request); Recipient sends response through the callback for the corresponding request API e.g. /on_search callback for /search request; Recipient of callback (could be the original sender) acknowledges the response by sending an "ACK" (or "NACK" if they cannot validate the request); The calls from are made in order (for pre- order stage) - /search, /select/, /init, /confirm
   categories:
@@ -165,6 +172,7 @@
     - transaction
     - transaction_flow
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What is the ‘/search’ call intended for?
   answer: |-
     ‘/search’ API is used to communicate the intent for a full or incremental catalog refresh. It triggers the seller NP to send a refreshed catalog. 
@@ -186,6 +194,7 @@
     - seller_catalog
     - seller_np
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Explain the keys days, schedule, holiday, duration, and range in the schedule object?
   answer: |-
     Days: This field represents the days of the week when the store is open Timings of Schedule: This object provides detailed information about the store's operating hours, including holidays and recurring schedules. Holiday: This field contains a list of future dates representing holidays when the store will be closed. The dates should be in the format "YYYY-MM-DD". An empty array should be passed if there are no holidays.
@@ -200,6 +209,7 @@
     - seller
     - seller_np
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is the start and end location in fulfillment?
   answer: 'Start: it is start location from where the order will get picked up End:  it is the end location where the order will get dropped.'
   categories:
@@ -212,6 +222,7 @@
     - purchase_order
     - retail_order
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is Request incremental catalog refresh (pull)
   answer: 'Request Incremental Catalog Refresh (Pull) is a process where a system requests only the updated or changed parts of a catalog since the last update, instead of retrieving the entire catalog. The Buyer NP requests a one-time incremental refresh: start_time is before Context.timestamp, end_time is also before Context.timestamp, and end_time is after start_time (meaning the Buyer NP pulls incremental updates between start_time and end_time in a single solicited response).'
   categories:
@@ -227,6 +238,7 @@
     - status_update
     - update
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Is there any partial cancellation supported from the buyer app?
   answer: Buyer side partial cancellation is not supported for now in the retail api contract
   categories:
@@ -244,6 +256,7 @@
     - retail_b2c
     - retail_domain
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |
     I want to be an ISN but don't want to build a seller app. Also Dont want to onboard any MSN Can I be on ONDC platform?
   answer: |
@@ -262,3 +275,4 @@
     - seller
     - seller_np
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active

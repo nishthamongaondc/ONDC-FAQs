@@ -20,6 +20,7 @@
   tags:
   - track
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What is the transaction flow in RSF ?
   answer: 'The image outlines the detailed transaction flow for Reconciliation and
     Settlement in a three-party setup: Collector, Settlement Agency, and Receiver.
@@ -43,6 +44,7 @@
   - settlement
   - status
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Is the settlement process expected to be carried out on a daily basis,
     or does it depend on the mutual decision of the buyer and seller (as both need
     to send /settle to S.A)?
@@ -62,6 +64,7 @@
   - seller
   - app
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Is there an offline settlement process in RSF 2.0?
   answer: No, the settlement of funds takes place through the settlement agency
   categories:
@@ -69,6 +72,7 @@
   tags:
   - settlement
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Is there any utility available for testing the RSF 2.0 flow?
   answer: Yes, details available in the ONDC Official GitHub page
   categories:
@@ -76,6 +80,7 @@
   tags:
   - ondc
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Is the provider amount optional?
   answer: Sharing provider amount is optional. In case seller app 'Opts in' for direct
     provider settlement, only then the provider amount is shared by the seller app.
@@ -86,6 +91,7 @@
   - app
   - settlement
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is the collector amount ?
   answer: collector amount is essentially the amount kept by the collector of payment
     of the order. In retail context where retail buyer app is the collector, collector
@@ -99,6 +105,7 @@
   - buyer
   - app
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is self.amount?
   answer: Depending on who is calling the API - For buyer app's recon - self would
     be BFF - For seller app's recon - In case of SOR settlement, self would be seller
@@ -114,6 +121,7 @@
   - seller
   - settlement
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What are the settlement instructions for the buyer and seller apps in
     a transaction where both apps have applicable commissions?
   answer: 'For a retail order of 1050 Rupees collected by the retail buyer app, where
@@ -132,6 +140,7 @@
   - transaction
   - retail
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: How will we know the tds and tcs value?
   answer: TCS/ TDS is dependent on the transaction context, whether it is applicable
     and if so how much. Check the tax guidelines shared. Settle instructions only
@@ -144,6 +153,7 @@
   - transaction
   - reconciliation
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Where can we use the TO_BE_INITIATED status in settlement?
   answer: recon / on_recon APIs are to be leveraged for reconciling orders among NPs
     irrespective of whether an order’s settlement amount has been settled or not.
@@ -158,6 +168,7 @@
   - order
   - api
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: For the "settle" call do we need to pass the list of orders for which
     the settlement window has expired or the orders whose settlement is yet to expire?
   answer: The orders for which the settlement is due is what is needed to be shared
@@ -168,6 +179,7 @@
   tags:
   - settlement
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Now, if the case is for settling withholding amounts after the return
     window is expired, if the order item is non returnable, will there be any case
     of withholding amount settlement involved?
@@ -182,6 +194,7 @@
   - refund
   - igm
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Can you point us to the documentation for payloads of ACK and NACK?
   answer: Available in Swagger UI - It is the same for all APIs across ONDC network
   categories:
@@ -192,6 +205,7 @@
   - ondc
   - network
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: How many APIs do I need to develop to become RSF 2.0 compliant?
   answer: 'There are 6 APIs for development: /Settle, /On_Settle, /Report, /on_Report,
     /Recon, /On_Recon.'
@@ -200,6 +214,7 @@
     API
   tags: []
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What is the use of /Settle, /On_Settle APIs?
   answer: '/Settle: The Network Participants (Collector and Receiver) send settlement
     instructions to the Settlement Agency, specifying the order ID and the corresponding
@@ -216,6 +231,7 @@
   - bap
   - status
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What is the use of /Report, /On_Report APIs?
   answer: Report APIs can be used by the Collector or Receiver to know about the status
     of a settlement call from the Settlement Agency. The situation can arise due to
@@ -233,6 +249,7 @@
   - api
   - transaction
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What is the use of /Recon, /On_Recon APIs?
   answer: "The reconciliation process among the NPs are facilitated through the recon\
     \ and on_recon APIs. In case settlement instructions are shared to the settlement\
@@ -260,6 +277,7 @@
   - api
   - error
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What are the Steps needed for my application to be RSF 2.0 Compliant?
   answer: 'RSF 2.0 compliance involves 4 major steps – 1. NOCA bank account opening
     (Refer to Ques 26. for NOCA opening applicability) 2. Registration process including
@@ -276,6 +294,7 @@
   - api
   - ondc
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What is the “MISC” settlement call? When should I be using the same?
   answer: 'MISC settlement (under Settle Call) is used for settling pre-funded money
     from an NP’s NOCA (non operative current account) to their operative account.
@@ -293,6 +312,7 @@
   - participant
   - order
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Can RECON API be initiated by both Collector and Receiver ?
   answer: Yes, it can be initiated by both. Suggestion is for the receiver to initiate
     the flow
@@ -302,6 +322,7 @@
   tags:
   - api
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: We have observed the following parameters in on_confirm. Could you please
     provide more information on these parameters?
   answer: '"@ondc/org/settlement_basis":"delivery", "@ondc/org/settlement_window":"P1D",
@@ -319,6 +340,7 @@
   - ondc
   - settlement
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: I am seeking clarification on the settlement process in scenarios where.
   answer: The seller-side order is partially canceled. The buyer-side order is fully
     canceled. As a seller app, we need to understand how settlement and reconciliation
@@ -340,6 +362,7 @@
   - app
   - reconciliation
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Is the transaction id the same in the report call?
   answer: Yes, the transaction id is the same in the report call for testing with
     a mock server. For real cases, this is up to the implementation of the NP. Refer
@@ -352,6 +375,7 @@
   - transaction
   - implementation
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Is the transaction id the same in the recon call?
   answer: Same as above
   categories:
@@ -360,6 +384,7 @@
   tags:
   - transaction
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: 'Please explain the /recon calculations?
 
     A:'
@@ -379,6 +404,7 @@
   - seller
   - commission
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: How does /on_recon help in fixing amounts in /settle?
   answer: 'orders.amount = Total order amount settlements.amount = Not always BFF
     (Depends on collector and receiver pair) settlements.commision = Always buyer
@@ -398,6 +424,7 @@
   - commission
   - seller
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: 'What does message.orders.amount refer to in the /recon payload, and why
     is message.orders.settlements an array? Also, should we include all previous unsuccessful
     settlement attempts for the order?
@@ -413,6 +440,7 @@
   - order
   - payment
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Are there unsolicited calls for reports or status updates?
   answer: No there are no unsolicited calls from the settlement agency
   categories:
@@ -421,6 +449,7 @@
   - status
   - settlement
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: 'We have completed the RSF 2.0 processes and our logs have been approved
     by ONDC. Could you kindly let us know what the next steps are in the process?
 
@@ -447,6 +476,7 @@
   - settlement
   - gst
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: 'How do I include additional payment components not listed in the standard
     example?
 
@@ -460,6 +490,7 @@
   tags:
   - payment
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What are the implications of delayed payments?
   answer: 'Delayed payments may incur additional interest. Details are provided in
     the settlement terms shared by the lender.
@@ -470,3 +501,4 @@
   tags:
   - settlement
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active

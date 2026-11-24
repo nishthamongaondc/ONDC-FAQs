@@ -6,6 +6,7 @@
     - log_submissions
     - review_process
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: When are my logs considered approved?
   answer: Your logs are officially considered **approved upon PR merge** into the main repository.
   categories:
@@ -14,6 +15,7 @@
     - log_submissions
     - review_process
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Can I include additional metadata or notes in the log files?
   answer: No, the files should **only contain raw JSON request and response payloads**. If additional context is needed, include it as PR comments or markdown summaries in the folder (README.md is acceptable).
   categories:
@@ -25,6 +27,7 @@
     - log_submissions
     - technical_documentation
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: What if I receive comments on my PR?
   answer: You are expected to **promptly revise** and **resubmit the corrected logs** by updating the same PR. This ensures continuity of the review process.
   categories:
@@ -33,6 +36,7 @@
     - log_submissions
     - review_process
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Can I create separate PRs for separate APIs?
   answer: It's recommended to submit **a single PR covering all APIs** to streamline review. If submitting separately, ensure each PR is clearly labeled and references related flows.
   categories:
@@ -42,6 +46,7 @@
     - log_submissions
     - review_process
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active
 - question: Who reviews the logs, and how long does it take?
   answer: ONDC reviewers will verify the logs. The review time depends on queue length, but maintaining naming conventions and file structure speeds up the process.
   categories:
@@ -50,3 +55,4 @@
     - log_submissions
     - review_process
   lastUpdated: '2024-01-01T10:00:00Z'
+  status: active

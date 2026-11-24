@@ -16,6 +16,7 @@
     - seller_app
     - seller_np
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is the Gateway in ONDC?
   answer: The Gateway is a crucial component in the ONDC network that facilitates discovery by routing search requests from Buyer Apps (BAPs) to all registered Seller Apps (BPPs). It does not send responses back to the BAP—its role is limited to multicasting the search request across the network. The BPPs then respond directly to the BAP with on_search. Gateway Endpoints:-
   categories:
@@ -36,6 +37,7 @@
     - open_network
     - search
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: What is the registry in ONDC?
   answer: 'The ONDC Registry is a central directory of all Network Participants (NPs) in a given environment (Staging, Preprod, or Prod). It stores: NP’s base API URLs Supported domains (e.g., Grocery, Mobility) Each environment has its own registry; participants must subscribe to the appropriate registry before transacting in that environment.'
   categories:
@@ -53,6 +55,7 @@
     - open_network
     - registry
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Do all messages pass through the Gateway?
   answer: No. Only discovery-phase messages (like /search) go through the Gateway. After sellers respond to discovery, all other protocol messages—such as /select, /init, /confirm, etc.—are exchanged directly between Buyer App and Seller App over secure channels (peer-to-peer).
   categories:
@@ -66,6 +69,7 @@
     - protocol
     - search
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: How does the Gateway decide which Seller Apps receive a search request?
   answer: 'The Gateway filters Seller Apps based on: Domain (e.g., Fashion, Grocery, F&B) Buyer’s location (city) This ensures only relevant sellers get the request, reducing noise and improving efficiency.'
   categories:
@@ -84,6 +88,7 @@
     - registry
     - search
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Can a participant in the Staging environment transact with one in Production?
   answer: No. Each environment is logically and technically isolated. Participants registered in one environment cannot communicate with participants in another. Ensure that all transacting parties are in the same environment.
   categories:
@@ -95,6 +100,7 @@
     - production
     - production_environment
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: '- Is GSTIN mandatory for sellers?'
   answer: '- It’s mandatory for SNP and not sellers. We don’t have a requirement for PAN. But it depends on the SNP. While onboarding, if they ask for gstin.'
   categories:
@@ -104,6 +110,7 @@
     - onboarding
     - participant_onboarding
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |-
     How many domains are currently supported on ONDC?
      
@@ -145,6 +152,7 @@
     - retail_domain
     - transport_services
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: |-
     What does a sample on_status or status response look like?
     A:
@@ -159,6 +167,7 @@
     - search
     - status
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: |-
     What does message.intent.payment.collected_by mean?
      A: It defines who collects the payment.
@@ -182,6 +191,7 @@
     - seller
     - seller_np
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: |-
     What do message.catalog.providers.categories.descriptor.code and name mean?
      A:
@@ -193,6 +203,7 @@
     - product_catalog
     - seller_catalog
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: |-
     What is the use of short_desc and long_desc in items.descriptor?
      A:
@@ -201,6 +212,7 @@
     - API Flow and Sequence
   tags: []
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: |-
     What does xinput.head.descriptor.name mean?
      A: It is the title of the data collection section, e.g., "Customer Information", which helps group the form inputs meaningfully.
@@ -212,6 +224,7 @@
     - quote_select
     - select
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: |-
     Can the borrower change the loan tenure?
      A:Yes, the borrower can modify the loan tenure using a dedicated form shared by the lender. After submitting the form, a new /select call is made with the form submission ID in the xinput.
@@ -226,6 +239,7 @@
     - quote_select
     - select
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: How do multiple /init and /on_init calls work?
   answer: '/init: The borrower fills out forms for KYC, bank details, and e-mandate to initiate the loan request. /on_init: The lender accepts the submitted details, returns the loan status, and may provide additional terms or request an e-mandate form.'
   categories:
@@ -241,6 +255,7 @@
     - order_status
     - status
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |-
     Whose bank account number is shared under message.order.payments.params.bank_account_number?
      A:This field refers to the bank account number of the BAP (Buyer App).
@@ -262,6 +277,7 @@
     - retail_order
     - transaction_confirm
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Why are there multiple calls for search and on_search?
   answer: 'Search: Explore available invoice based loan options by conducting search over the network. on_search: The lender platform provides a comprehensive catalog of various loan types including invoice based loans. Form: On the above on_search in xinput lender platform sends the form for Invoice based loan to get all the relevant details like UDYAM, contact, GSTIN profile, GSTR1, GSTRA2, and GSTR3B. Note: JSON format to upload the docs as part of form submission Search: Find suitable invoice based loan services, here you will also provide the submission id for the previous form. on_search: The lender platform provides a comprehensive catalog of various loan types including invoice based loans also the lender platform generates a consent request for capturing the borrower''s consent. search: Find suitable invoice based loan services. on_search: The lender platform provides a comprehensive catalog of various loan types including invoice based loans.'
   categories:
@@ -283,12 +299,14 @@
     - search
     - seller_catalog
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Is there a specified duration for the offer's validity?
   answer: Yes, the offer includes a defined expiry time, which is specified in the quote.ttl .
   categories:
     - API Flow and Sequence
   tags: []
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is quote.id on on_select?
   answer: Here quote.id is lead id or loan_id which is created at lenders end whenever they receive user information based on the offer they have generated further lender create lead id at their system that is further mapped to loan id.
   categories:
@@ -298,6 +316,7 @@
     - quote_select
     - select
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: In /on_confirm API, what are different codes for message/order/fulfillments/state/descriptor?
   answer: 'It refers to portraying the present status of order fulfillments. It encapsulates the real time information on the progress and completion status of the fulfillment process. INITIATED: When loan gets initiated by lender SANCTIONED:  Loan sanction is the approval of the loan by lender DISBURSED: When the lender delivers the amount to the borrower after verification and approval PENDING: When the loan is in pending state REJECTED: When the loan request gets rejected by lender due to some reason COMPLETED: When the overall process for loan gets over'
   categories:
@@ -319,6 +338,7 @@
     - status
     - transaction_confirm
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Why is signing of ONDC API requests required?
   answer: |
     Signing ensures the authenticity and integrity of the request, proving that it originated from a legitimate participant and was not tampered with in transit.
@@ -335,6 +355,7 @@
     - open_network
     - participant
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: How is a request signed in ONDC?
   answer: |
     The sender uses their private key to sign the request body. This signature is included in the Authorization header of the API call, following the HMAC or RSA algorithm as defined in ONDC standards.
@@ -352,6 +373,7 @@
     - signature
     - signature_verification
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: How does the recipient verify the signature?
   answer: |
     The recipient extracts the signature, fetches the sender’s public key from the ONDC Registry using the subscriber_id, and verifies the signed body against it.
@@ -368,6 +390,7 @@
     - signature
     - signature_verification
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is the purpose of the ONDC Registry lookup?
   answer: |
     It allows a participant to verify another participant’s metadata—like domain, signing public key, and endpoint—before processing the request.
@@ -384,12 +407,14 @@
     - participant
     - registry
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What data is returned in a lookup response?
   answer: 'The response contains:'
   categories:
     - API Flow and Sequence
   tags: []
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: When should lookup be performed?
   answer: |
     Before processing any signed request, the receiving participant should perform a lookup to validate:
@@ -399,6 +424,7 @@
     - network_participant_np
     - participant
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Do I need to specify fulfillment types in the /search call?
   answer: |
     The /search call supports two fulfillment types: Delivery and Self-Pickup — and yes, you can choose both. Quick tip: Specifying fulfillment is optional. If it's not mentioned in the /search call, the response should include all fulfillment types supported by the provider.
@@ -412,6 +438,7 @@
     - order_fulfillment
     - search
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |
     How is Retail API contract version 1.1.0 different from Retail API contract version 1.2.0?
   answer: |
@@ -436,6 +463,7 @@
     - retail_order
     - seller_catalog
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What is message.catalog.providers.items.id?
   answer: |
     It is a unique system-generated ID for each individual financial product or loan offering. This ID is crucial during /select, /init, and /confirm.
@@ -455,6 +483,7 @@
     - seller_catalog
     - transaction_confirm
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: Can add_ons be modified in future API calls?
   answer: |
     Yes, additional add_ons can be added in subsequent calls. However, previously added add_ons cannot be removed.
@@ -466,6 +495,7 @@
     - beckn_api
     - ondc_protocol
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |
     Could you offer detailed information about the field's inter_participant amount, provider amount, and self amount in the /settle API?
   answer: |
@@ -480,6 +510,7 @@
     - ondc_protocol
     - participant
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: |
     Settlement in settlements array of order in /recon - /on_recon APIs, what does payment_id, amount, commission (is this buyer app finder fee, seller app finder fee, withholding amount) signify?
   answer: |
@@ -504,6 +535,7 @@
     - settlement
     - settlement_framework
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |
     Is the settlement_window field mandatory in the "on_confirm" call? If it is not required, what would be the recommended default value to filter orders to be settled in the RSF "/settle" call?
   answer: |
@@ -522,6 +554,7 @@
     - settlement_framework
     - transaction_confirm
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |
     I am a seller and there are unsettled orders with a buyer application. What should be my next steps to initiate reconciliation?
   answer: |
@@ -545,6 +578,7 @@
     - seller_np
     - transaction_reconciliation
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |
     For RSF API implementation, is it necessary to also subscribe to the "ONDC:NTS10" domain?
   answer: No subscription is needed for ONDC:NTS10
@@ -565,6 +599,7 @@
     - registry_subscription
     - subscription
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: |
     The documentation indicates that as a seller app, we need to call the /settle endpoint of the Settlement Agency to initiate the RSF settlement flow. Is there a predefined cycle for calling this method (e.g., every 7 days), or is this something we need to configure manually?
   answer: |
@@ -587,6 +622,7 @@
     - settlement_framework
     - technical_documentation
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: archived
 - question: Can a single invoice be used across multiple domain orders?
   answer: |
     Yes, if items are fulfilled through a single logistics operation, the seller app may reuse the same invoice across /on_status callbacks.
@@ -608,6 +644,7 @@
     - seller_np
     - status
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active
 - question: What if one of the seller apps doesn’t respond to /select or /confirm?
   answer: |
     The buyer app must implement a timeout and retry logic as per ONDC guidelines. If confirmation ultimately fails, initiate cancellation for all related orders.
@@ -629,3 +666,4 @@
     - seller_np
     - transaction_confirm
   lastUpdated: '2024-07-10T10:00:00Z'
+  status: active

@@ -44,9 +44,11 @@ class FAQManager {
           
           const yamlText = await response.text();
           const rawFAQs = window.jsyaml.load(yamlText);
-          console.log(`Loaded ${rawFAQs ? rawFAQs.length : 0} FAQs from ${category}`);
-          
-          return rawFAQs || [];
+          // Only display FAQs tagged active; archived entries are hidden (missing status defaults to active).
+          const visibleFAQs = (rawFAQs || []).filter(faq => (faq.status || 'active') !== 'archived');
+          console.log(`Loaded ${visibleFAQs.length} active of ${rawFAQs ? rawFAQs.length : 0} FAQs from ${category}`);
+
+          return visibleFAQs;
         } catch (error) {
           console.warn(`Error loading ${filename}:`, error);
           return [];
@@ -76,8 +78,9 @@ class FAQManager {
         const response = await fetch('data/faqs.yaml');
         const yamlText = await response.text();
         const rawFAQs = window.jsyaml.load(yamlText);
-        
-        this.faqs = this.processFAQs(rawFAQs);
+        const visibleFAQs = (rawFAQs || []).filter(faq => (faq.status || 'active') !== 'archived');
+
+        this.faqs = this.processFAQs(visibleFAQs);
         this.extractCategories();
         this.extractTags();
         this.isFullyLoaded = true;
